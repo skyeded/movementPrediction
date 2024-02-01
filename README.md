@@ -14,10 +14,25 @@ _The system utilizes a combination of cameras, radar, and ultrasonic sensors to 
 
 ## Basic idea
 
-Data: Skeletal points of before surgery and after surgery.
+Map the skeletal points received from the prediction of AI (~~from the trained model), then map the texture onto the output using planar-based mapping (?) from the 3 different angles of the cameras.
 
-The input (Skeletal points before surgery) and output (Skeleta points after surgery) will be trained in the model (still unknown). 
+### Possible Models
 
-# New input
+**GAN**
 
-New data can be added and reinforced learning can be applied to improve the accuracy of the model.
+Unsupervised learning - The data needed for GAN is multiple movement of patient before surgery.
+
+**LSTM RNN**
+
+Supervised learning - The data needed for RNN is the movement of the patient before the surgery and the movement after undergoing surgery. The data will be trained in the model with the input (movement before surgery) and output the result (movement after the surgery).
+
+***This could be effective!*** because RNN is used for **Timeseries Analysis**.
+
+Time Series Analysis is 
+a specific way of analyzing a sequence of data points collected over an interval of time.
+
+![image](https://github.com/skyeded/movementPrediction/assets/113011883/beac4213-3ba7-4f51-9158-a1698f02c41c)
+
+![image](https://github.com/skyeded/movementPrediction/assets/113011883/99c00847-90ee-49c7-a413-4b2caa988b77)
+
+Mix supervised learning with unsupervised learning.
